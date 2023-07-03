@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <section class="header">
+        <h1>New Project</h1>
+    </section>
+    <section id="form">
+        <form action="{{ url_for('new')}}" method="POST">
+            <label for="title">Project Title</label>
+            <input type="text" name="title" id="title" placeholder="Project Name" required>
+            <label for="date">Completion Date</label>
+            <input type="month" name="date" id="date" required>
+            <label for="description">Description</label>
+            <textarea name="desc" id="description" cols="30" rows="20" placeholder="Description" required></textarea>
+            <label for="skills-list" id="skills-label">Skills</label>
+            <p>Separate each skill by a comma</p>
+            <textarea name="skills" id="skills-list" cols="30" rows="10" placeholder="Skill, Skill" required></textarea>
+            <label for="github">GitHub Link</label>
+            <input type="url" name="github" id="github" placeholder="Link to the repo" required>
+            <div>
+                <button type="reset">Cancel</button>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </section>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <section class="header">
+        <h1>Python Developer</h1>
+        <p>An experienced business owner with a late found passion for technology.</p>
+        <img src="https://media.licdn.com/dms/image/C5603AQHCs1knpSV-xw/profile-displayphoto-shrink_400_400/0/1548294722908?e=1693440000&v=beta&t=WQXgYr8bgjhAyO5Ev-7aqGuEJ2buQNRiXfwDwlfXJ48" alt="Headshot of myself">
+    </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            As an experienced manager and business owner, I recently discovered my passion for technology, coding,
+            automation, and artificial intelligence within the last few years. As I explored technology solutions
+            for my company I ventured into highly enjoyable and personally satisfying projects that have built
+            the foundation of my technical knowledge, and formed as the foundation my journey into software development.
+        </p>
+        <div id="triangle1"></div>
+        <div id="triangle2"></div>
+    </section>
+    <section id="skills">
+        <i class="fas fa-laptop-code"></i>
+        <h2>Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>Flask</li>
+            <li>Django</li>
+            <li>FastAPI</li>
+            <li>SQLAlchemy</li>
+            <li>Requests</li>
+            <li>Multithreading</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>PHP</li>
+            <li>SQL</li>
+            <li>PostgreSQL</li>
+            <li>Linux</li>
+            <li>GitHub</li>
+            <li>Git</li>
+        </ul>
+    </section>
+    <section id="projects">
+        <div id="triangle3"></div>
+        <i class="fas fa-file-code"></i>
+        <h2>Projects</h2>
+        <div id="project-list">
+
+            {% for project in all_projects %}
+            <div id="project1" class="a-project">
+                <h3><a href="{{ url_for('details', id=project.id)}}" style="text-decoration: none; color: inherit;">{{ project.title }}</a></h3>
+                <a href="{{ project.project_url }}" target="_blank" class="github-btn">
+                    <i class="fab fa-github"></i>
+                    View on GitHub
+                </a>
+                <p>
+                    {{ project.details }}
+                </p>
+                <p>
+                    Skills: {{ project.skills }}
+                </p>
+                <hr>
+            </div> <!--  End Div for Individual Project  </p>-->
+            {% endfor %}
+
+        </div>   <!--  End Div for All Projects  </p>-->
+        <div id="triangle4"></div>
+    </section>
+    <section id="contact">
+        <i class="fas fa-paper-plane"></i>
+        <h2>Contact Me</h2>
+        <p>
+            Michael Barnes - CSNEWB
+        </p>
+        <p>
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:michael@csnewb.com"> michael@csnewb.com </a>
+        </p>
+    </section>
+{% endblock %}
